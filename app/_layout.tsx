@@ -1,35 +1,14 @@
-import React from "react";
-import { View, Text, StyleSheet, Linking } from "react-native";
 import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { Slot, Stack } from "expo-router";
 
-export default function App() {
+const RootLayout = () => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Aora ADSO</Text>
-      <StatusBar style='auto' />
-      <Text
-        style={styles.linkText}
-        onPress={() => Linking.openURL('app/profile.jsx')}
-      >
-        Ir a la página de Perfil
-      </Text>
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-  text: {
-    fontSize: 18,
-  },
-  linkText: {
-    color: 'blue',
-    fontSize: 18,
-    marginTop: 10,
-  },
-});
+   <Stack>
+     <Stack.Screen name="index" 
+     options={{ headerShown: false}} />
+     
+   </Stack>
+  )
+  }
+export default RootLayout;
